@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='SensorsAnalyticsSDK',
+    name='sensorsanalytics',
     version='1.7.1',
     author='Yuhan ZOU',
     author_email='zouyuhan@sensorsdata.cn',
