@@ -731,7 +731,7 @@ class FileLoggingConsumer(object):
     """
 
     def __init__(self, prefix):
-        log_handler = logging.handlers.FileHandler(prefix)
+        log_handler = logging.FileHandler(prefix)
         log_handler.setFormatter(logging.Formatter('%(message)s'))
         self.logger = logging.getLogger('SensorsAnalyticsLogger')
         self.logger.propagate = False
