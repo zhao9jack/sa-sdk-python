@@ -724,3 +724,25 @@ class LoggingConsumer(object):
 
     def close(self):
         self.logger.handlers[0].close()
+
+class FileLoggingConsumer(object):
+    """
+    将数据使用 logging 库输出到指定文件，不切割
+    """
+
+    def __init__(self, prefix):
+        log_handler = logging.handlers.FileHandler(prefix)
+        log_handler.setFormatter(logging.Formatter('%(message)s'))
+        self.logger = logging.getLogger('SensorsAnalyticsLogger')
+        self.logger.propagate = False
+        self.logger.setLevel(logging.INFO)
+        self.logger.addHandler(log_handler)
+
+    def send(self, msg):
+        self.logger.info(msg)
+
+    def flush(self):
+        self.logger.handlers[0].flush()
+
+    def close(self):
+        self.logger.handlers[0].close()
