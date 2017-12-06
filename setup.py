@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='zhao9jack sensorsanalytics' ,
+    name='sa-sdk-python',
     version='1.7.1',
     author='Yuhan ZOU',
     author_email='zouyuhan@sensorsdata.cn',
